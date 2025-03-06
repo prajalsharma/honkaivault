@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="px-5 py-4 text-white fixed w-full border-b border-primary-gray rounded-2xl lg:border-none backdrop-blur-lg">
+    <header className="px-5 py-4 text-white fixed w-full border-b border-primary-gray rounded-2xl lg:border-none backdrop-blur-lg z-50">
       <nav className="flex flex-col md:flex-row items-center justify-between text-sm gap-3  ">
         <div className="w-72 lg:w-60">
           <a href="https://www.cornarolabs.xyz">
