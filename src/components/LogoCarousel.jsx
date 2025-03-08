@@ -19,7 +19,7 @@ const LogoCarousel = () => {
   }, []);
 
   return (
-    <div className="carousel relative flex overflow-hidden mx-20 py-10">
+    <div className="carousel relative flex overflow-hidden mx-5 md:mx-20 py-10">
       <div className="carousel-track flex py-3 items-center ">
         {logos.map((logo) => (
           <div className="w-48 h-14 flex items-center justify-center mx-5" key={logo}>

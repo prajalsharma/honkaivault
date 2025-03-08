@@ -69,6 +69,10 @@ p {
     display: none;
   }
 
+  @media (min-width: 770px) {
+    left: 15%;
+  }
+
   @media (min-width: 1300px) {
     left: 30%;
   }
@@ -163,6 +167,10 @@ p {
   height: 100%;
   background-color: red;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 75px;
+  }
 }
 
 .carousel:before {
