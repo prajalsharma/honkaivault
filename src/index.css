@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-gray: #74758e;
+  --color-primary-gray: #c2c3cf;
 }
 
 body {
@@ -40,6 +40,63 @@ p {
   );
 }
 
+.text-box:before {
+  content: "";
+  position: absolute;
+  top: -16rem;
+  left: 0;
+  width: 305px;
+  height: 305px;
+  background-image: url("/shape2.svg");
+  background-size: cover;
+  z-index: 5;
+}
+
+.text-box:after {
+  content: "";
+  position: absolute;
+  bottom: -10rem;
+  left: 20%;
+  width: 300px;
+  height: 300px;
+  background-image: url("/shape5.svg");
+  background-size: cover;
+  opacity: 0.5;
+  transform: rotate(-45deg);
+  z-index: 5;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  @media (min-width: 1300px) {
+    left: 30%;
+  }
+}
+
+.shape-1 {
+  top: 0rem;
+  right: -100px;
+  width: 550px;
+  height: 550px;
+  background-image: url("/shape1.svg");
+  background-size: cover;
+  z-index: 2;
+
+  @media (max-width: 648px) {
+    top: 7rem;
+    right: -210px;
+  }
+  @media (max-width: 500px) {
+    top: 13rem;
+  }
+
+  @media (min-width: 1300px) {
+    top: -6rem;
+    width: 700px;
+    height: 700px;
+  }
+}
 .custom-btn {
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   color: #ffffff;
