@@ -22,7 +22,7 @@ p {
 .hero {
   background-image: url("/bg.png");
   background-size: cover;
-  background-position: 100% 80%;
+  background-position: center;
 }
 
 /* .hero:before {
