@@ -20,14 +20,14 @@ const logos = [
 ];
 
 const LogoCarousel = () => {
-  const carouselRef = useRef(null);
   const [position, setPosition] = useState(0);
+  const speed = 0.5; // Adjust speed if needed
 
   useEffect(() => {
     let animationFrameId;
 
     const moveCarousel = () => {
-      setPosition((prevPosition) => (prevPosition <= -100 ? 0 : prevPosition - 1));
+      setPosition((prevPosition) => (prevPosition <= -100 ? 0 : prevPosition - speed));
       animationFrameId = requestAnimationFrame(moveCarousel);
     };
 
@@ -39,19 +39,27 @@ const LogoCarousel = () => {
   return (
     <div className="carousel relative overflow-hidden mx-5 md:mx-20 py-10">
       <div
-        ref={carouselRef}
-        className="carousel-track flex py-3 items-center"
-        style={{ transform: `translateX(${position}px)`, transition: "transform 0.05s linear" }}
+        className="carousel-track flex items-center"
+        style={{
+          transform: `translateX(${position}px)`,
+          transition: "transform 0.05s linear",
+          whiteSpace: "nowrap",
+        }}
       >
-        {logos.concat(logos).map((logo, index) => ( // Doubled for seamless looping
+        {logos.concat(logos).map((logo, index) => (
           <a
             key={index}
             href={logo.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-48 h-14 flex items-center justify-center mx-5"
+            className="flex items-center justify-center mx-5"
+            style={{ width: "150px", height: "50px" }} // Fixed size
           >
-            <img src={logo.src} alt="logo" className="w-full" />
+            <img
+              src={logo.src}
+              alt="logo"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
           </a>
         ))}
       </div>
