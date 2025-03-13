@@ -1,5 +1,7 @@
+import { motion } from "motion/react";
 import { ArrowUpRight, Bitcoin, ClipboardList, Coins, Rocket } from "lucide-react";
 import ServiceCard from "./ServiceCard";
+import { gradientButtonVariants } from "@/lib/animations";
 
 const services = [
   {
@@ -36,29 +38,70 @@ const services = [
   },
 ];
 
+const fadeInVariant = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const container = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 2, staggerChildren: 0.25 } },
+};
+
+const serviceCardVariants = {
+  initial: { opacity: 0, y: -10 },
+  animate: { opacity: 1, y: 0 },
+};
+
 const Services = () => {
   return (
     <section id="services" className="py-8 lg:py-20 px-10">
-      <h2 className="text-4xl text-white font-bold text-center uppercase">Services</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-16 py-20 lg:px-20">
+      <motion.h2
+        variants={fadeInVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="text-5xl text-white font-bold text-center uppercase">
+        Services
+      </motion.h2>
+      <motion.div
+        variants={container}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-16 py-20 lg:px-20">
         {services.map((service, index) => (
-          <div key={index}>
+          <motion.div variants={serviceCardVariants} key={index}>
             <ServiceCard service={service} />
-          </div>
+          </motion.div>
         ))}
-      </div>
-      <div className="max-w-min mx-auto">
-        <a
-          className="custom-btn-2"
+      </motion.div>
+      <motion.div
+        variants={fadeInVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="max-w-min mx-auto">
+        <motion.a
+          variants={gradientButtonVariants}
+          initial="initial"
+          whileHover="hover"
+          className="custom-btn-2 group"
           href="https://calendly.com/cornarolabs"
           target="_blank"
           rel="noreferrer">
-          {" "}
           <span className="flex items-center gap-2">
-            Discover How We Can Help <ArrowUpRight />
+            Discover How We Can Help{" "}
+            <ArrowUpRight className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1.5 duration-500" />
           </span>
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
     </section>
   );
 };

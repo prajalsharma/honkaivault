@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motion } from "motion/react";
 import algorand from "../assets/algorand.svg";
 import cosmos from "../assets/cosmos.svg";
 import celo from "../assets/celo.svg";
@@ -17,7 +18,7 @@ const logos = [
   { src: filecoin, url: "https://filecoin.io/" },
   { src: ripple, url: "https://ripple.com/" },
   { src: stellar, url: "https://www.stellar.org/" },
-  { src: europeanCommission, url: "https://ec.europa.eu/" }
+  { src: europeanCommission, url: "https://ec.europa.eu/" },
 ];
 
 const LogoCarousel = () => {
@@ -28,18 +29,37 @@ const LogoCarousel = () => {
     carousel.appendChild(clone);
   }, []);
 
+  const fadeInVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 3.5,
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <div className="carousel relative flex overflow-hidden mx-5 md:mx-20 py-10">
+    <motion.div
+      variants={fadeInVariant}
+      initial="hidden"
+      animate="visible"
+      className="carousel relative flex overflow-hidden mx-5 md:mx-20 py-10">
       <div className="carousel-track flex py-3 items-center">
         {logos.map((logo) => (
           <div className="w-48 h-14 flex items-center justify-center mx-5" key={logo.url}>
             <a href={logo.url} target="_blank" rel="noopener noreferrer">
-              <img src={logo.src} alt="logo" className="w-full hover:opacity-80 transition-opacity duration-200" />
+              <img
+                src={logo.src}
+                alt="logo"
+                className="w-full hover:opacity-80 transition-opacity duration-200"
+              />
             </a>
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
