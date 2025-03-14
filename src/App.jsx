@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import LogoCarousel from "./components/LogoCarousel";
 import Services from "./components/Services";
 import TrackRecord from "./components/TrackRecord";
+import ScrollToTop from "./components/ScrollToTopButton";
 
 const fadeInVariant = {
   hidden: { opacity: 0, y: -20 },
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <main className="pb-20">
         <Hero />
         <div className="text-center mt-14">
