@@ -31,7 +31,7 @@ const AboutUs = () => {
   return (
     <section
       id="about-us"
-      className="flex flex-col lg:flex-row items-center justify-center pt-16 pb-10 px-10 gap-20">
+      className="flex flex-col lg:flex-row items-center justify-center pt-16 pb-10 px-10 text-center lg:text-left  gap-20">
       <motion.div
         variants={container}
         initial="initial"
@@ -74,7 +74,7 @@ const AboutUs = () => {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.8 }}
-        className="dashboard-preview-wrapper rounded-md h-min shrink-0 w-[30rem]">
+        className="dashboard-preview-wrapper rounded-md h-min shrink-0 max-w-[30rem]">
         <img src={Team} alt="" className="rounded-md" />
       </motion.div>
     </section>
