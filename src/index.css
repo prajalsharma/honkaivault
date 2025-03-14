@@ -293,3 +293,12 @@ footer ul li:hover {
     @apply bg-background text-foreground;
   }
 }
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 26px;
+  }
+  :root {
+    --spacing: 0.35rem;
+  }
+}

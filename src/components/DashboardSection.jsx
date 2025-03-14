@@ -21,14 +21,14 @@ const FadeIn = {
 const DashboardSection = () => {
   return (
     <section
-      className="flex flex-col-reverse lg:flex-row gap-10 py-20 lg:py-28 px-10 items-center"
+      className="flex flex-col-reverse lg:flex-row gap-10 py-20 lg:py-28 px-10 items-center justify-center"
       id="dashboard">
       <motion.div
         variants={slideIn}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
-        className="dashboard-preview-wrapper rounded-md h-full lg:w-[90%]">
+        className="dashboard-preview-wrapper rounded-md h-full">
         <img src={Dashboard} alt="" className="rounded-md" />
       </motion.div>
       <motion.div

@@ -31,7 +31,7 @@ const AboutUs = () => {
   return (
     <section
       id="about-us"
-      className="flex flex-col lg:flex-row items-center justify-center pt-16 pb-10 px-10 text-center lg:text-left  gap-20">
+      className="flex flex-col lg:flex-row items-center justify-center pt-16 pb-10 px-10 text-center lg:text-left gap-20 lg:gap-14">
       <motion.div
         variants={container}
         initial="initial"

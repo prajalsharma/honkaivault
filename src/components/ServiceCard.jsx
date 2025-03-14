@@ -9,7 +9,7 @@ const ServiceCard = ({ service }) => {
     <motion.button
       layout
       onClick={() => setIsOpen(!isOpen)}
-      className="service-card bg-[#171b30]/75 hover:bg-[#171b30]/50 rounded-lg cursor-pointer flex flex-col justify-center  group pb-2 min-h-[15rem] transition-colors">
+      className="service-card bg-[#171b30]/75 hover:bg-[#171b30]/50 rounded-lg cursor-pointer flex flex-col justify-center group pb-2 min-h-[15rem] transition-colors w-full">
       <motion.div
         layout
         className=" text-white text-base flex flex-col gap-4 p-4 h-full items-center justify-center font-bold transition-colors text-center relative pt-16 ">
@@ -25,7 +25,7 @@ const ServiceCard = ({ service }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="text-white flex flex-col gap-4 p-4 h-full items-center justify-center text-sm relative">
+              className="text-white flex flex-col gap-4 p-4 h-full items-center justify-center text-sm relative lg:items-start">
               {service.description}
             </motion.div>
           )}
