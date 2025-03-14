@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 const links = [
   {
     id: 1,
-    title: "Dashboard",
+    title: "Grants Dashboard",
     url: "#dashboard",
   },
   {
@@ -20,6 +20,11 @@ const links = [
     id: 4,
     title: "Track Record",
     url: "#track-record",
+  },
+  {
+    id: 5,
+    title: "Contact Us",
+    url: "mailto:info@cornarolabs.xyz",
   },
 ];
 

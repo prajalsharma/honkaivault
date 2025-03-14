@@ -27,28 +27,28 @@ const DashboardSection = () => {
         variants={slideIn}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.8 }}
-        className="dashboard-preview-wrapper rounded-md h-full">
+        viewport={{ once: true, amount: 0.5 }}
+        className="dashboard-preview-wrapper rounded-md h-full lg:w-[90%]">
         <img src={Dashboard} alt="" className="rounded-md" />
       </motion.div>
       <motion.div
         variants={slideInUp}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.7 }}
+        viewport={{ once: true, amount: 0.5 }}
         className="flex flex-col gap-5 text-center lg:text-left">
         <motion.h2 variants={FadeIn} className="font-medium text-lg text-light-blue">
-          Grants Dashboard
+          Web3 Grants Dashboard
         </motion.h2>
         <motion.h3 variants={FadeIn} className="text-white font-bold text-3xl">
-          Web3Grants – Find the
+          Web3Grants.co – Find the
           <span className="gradient-text"> Perfect Grant for Your Project</span>
         </motion.h3>
         <motion.p variants={FadeIn}>
           The CL Web3 Grants Platform enhances how Web3 grant programs are accessed, analysed, and
           managed.
         </motion.p>
-        <motion.ul variants={FadeIn} className="text-white text-sm space-y-3 font-medium">
+        <motion.ul variants={FadeIn} className="text-white text-sm space-y-6 font-medium">
           <li className="flex items-center gap-2 justify-center lg:justify-start">
             <RefreshCw className="text-light-blue size-5 shrink-0" />
             Integrating real-time data updates (refreshed every 48 hours)
@@ -63,7 +63,7 @@ const DashboardSection = () => {
             and achieve better results.
           </li>
         </motion.ul>
-        <motion.div variants={FadeIn} className="flex gap-2 flex-wrap justify-center">
+        <motion.div variants={FadeIn} className="pt-6 flex gap-5 flex-wrap justify-center">
           <motion.a
             variants={gradientButtonVariants}
             initial="initial"
